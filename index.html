@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: aliceblue;
+            
+            color: #000;
+        }
+
+
+
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+/* background-image: url("https://www.shutterstock.com/video/clip-1100466737-metaverse-inscription-technology-background-virtual-reality");
+background-size: cover;
+background-repeat: no-repeat; */
+/* width: 100%;
+            animation: changeBackgroundColor 1s infinite; */
+
+        }
+    
+        /* @keyframes changeBackgroundColor {
+            0% {
+                background-color: #001F3F;
+            }
+
+            25% {
+                background-color: #43cea2;
+            }
+
+            50% {
+                background-color: #FF4136;
+            }
+
+            70% {
+                background-color: #ffb347;
+            }
+
+            100% {
+                background-color: #001F3F;
+            }
+        } */
+
+        .calculator {
+            
+            padding: 15px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 17px 1px   #fff;
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            grid-template-rows: repeat(6, 80px);
+        }
+
+        input {
+            grid-column: span 4;
+            width: 270px;
+            height: 70px;
+            background-color: black;
+            border: none;
+            box-shadow: -11px -1px 33px 7px #fff inset;
+            border-radius: 90px;
+            outline: none;
+            font-size: 50px;
+            text-align: end;
+            margin: 9px auto;
+            padding: 20px;
+        }
+
+        input::placeholder {
+            color: #fff;
+        }
+
+        button {
+            width: 48px;
+            height: 48px;
+
+            font-size: 20px;
+            border-radius: 80%;
+            margin: 10px auto;
+
+
+        }
+
+        .eq {
+            width: 115px;
+            border-radius: 40px;
+            font-size: 50px;
+            margin: 9px 20px;
+            
+            color: black;
+
+        }
+        .video-wrapper {
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+  
+  
+}
+	video {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay muted loop playsinline preload="metadata">
+            
+            <source src="video (2160p).mp4" type="video/mp4">
+      </video>
+        <div class="calculator" style="position: absolute;">
+            <input type="text" placeholder="0" id="result" readonly>
+            
+
+
+            <button onclick="scr()">AC</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="calculator('%')">%</button>
+            <button onclick="calculator('/')">/</button>
+            <button onclick="calculator('7')">7</button>
+            <button onclick="calculator('8')">8</button>
+            <button onclick="calculator('9')">9</button>
+            <button onclick="calculator('*')">X</button>
+            <button onclick="calculator('4')">4</button>
+            <button onclick="calculator('5')">5</button>
+            <button onclick="calculator('6')">6</button>
+            <button onclick="calculator('+')">+</button>
+            <button onclick="calculator('1')">1</button>
+            <button onclick="calculator('2')">2</button>
+            <button onclick="calculator('3')">3</button>
+            <button onclick="calculator('-')">-</button>
+            <button onclick="calculator('0')">0</button>
+            <button onclick="calculator('.')">.</button>
+            <button class="eq" onclick="equ()">=</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    let result = document.getElementById("result")
+    function calculator(number) {
+        result.value += number
+    }
+
+    function equ() {
+        result.value = eval(result.value);
+    }
+    function scr() {
+        result.value = "";
+    }
+    function del() {
+        result.value = result.value.slice(0, -1);
+    }
+
+</script>
+
+</html>
